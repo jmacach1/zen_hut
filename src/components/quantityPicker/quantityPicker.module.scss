@@ -1,0 +1,27 @@
+.quantityPicker {
+  display: flex;
+  height: 100%;
+
+  button,
+  label {
+    font-size: 1.5rem;
+    flex: 1;
+  }
+
+  button {
+    border: none;
+    color: white;
+    background-color: rgb(30, 122, 72);
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+  }
+
+  button:hover {
+    background-color: rgb(48, 190, 112);
+  }
+
+  label {
+    display: inline-block;
+    min-width: 100px;
+  }
+}

@@ -1,0 +1,26 @@
+.product {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  border: 1px solid lightslategray;
+  border-radius: 15px;
+  -webkit-box-shadow: 4px 4px 6px 2px #898989; 
+  box-shadow: 4px 4px 6px 2px #898989;
+  overflow: hidden;
+  background-color: cornsilk;
+}
+
+.image {
+  img {
+    width: 100%;
+  }
+}
+
+.price,
+.title {
+  padding: 0.25rem .5rem;
+}
+
+.picker {
+  height: 50px
+}
