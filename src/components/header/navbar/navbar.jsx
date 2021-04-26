@@ -22,7 +22,7 @@ function Logo() {
         <img src="/sprout.svg" alt="sprout"/>
       </div>
       <div className={styles.title_text}>
-        <h1>Zen Sprouts</h1>
+        <h1>Zen Table</h1>
       </div>
     </div>
   );
