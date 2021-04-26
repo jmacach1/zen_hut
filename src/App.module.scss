@@ -1,3 +1,5 @@
+@import './theme.scss';
+
 * {
   box-sizing: border-box;
 }
@@ -15,6 +17,7 @@
 }
 
 .main {
-  background-color: grey;
+  margin: 0 auto;
+  background-color: $keppel;
   flex: 1;
 }

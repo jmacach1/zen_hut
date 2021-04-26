@@ -1,3 +1,5 @@
+@import '../../../theme.scss';
+
 .burger {
   display: block;
   position: relative;
@@ -5,7 +7,7 @@
 
 .burger_icon {
   display: inline-block;
-  padding: .5rem;
+  padding: .6rem;
 
   .bar1, .bar2, .bar3 {
     width: 35px;
@@ -44,28 +46,29 @@
 
 .nav {
   width: 100vw;
-  height: fit-content;
 
   a {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1rem;
-    background-color: gold;
-    font-size: 1.2rem;
+    padding: 1.75rem;
+    margin-right: 1rem;
+    font-size: 1.3rem;
     font-weight: bolder;
     text-decoration: none;
+    color: $ivory;
 
     &.active {
-      background-color: goldenrod;
+      background-color: $keppel;
     }
 
     &:hover {
-      background-color: lightgoldenrodyellow;
+      background-color: $keppel;
+      transform: scale(1.25);
     }
     
     &:visited {
-      color: rgb(32, 32, 32);
+      color: $ivory;
     }
     
     &:active {
@@ -74,10 +77,20 @@
   }
 }
 
+@media only screen and (min-width: 900px) {
+  .burger_icon {
+    display: none;
+  }
 
+  .menu_div {
+    display: inline-block;
+    position: static;
+  }
+  
+  .nav {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+  }
 
-// @media only screen and (min-width: 600px) {
-
- 
-
-// }
+}

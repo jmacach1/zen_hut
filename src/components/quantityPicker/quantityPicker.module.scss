@@ -1,3 +1,5 @@
+@import '../../theme.scss';
+
 .quantityPicker {
   display: flex;
   height: 100%;
@@ -11,9 +13,10 @@
   button {
     border: none;
     color: white;
-    background-color: rgb(30, 122, 72);
+    background-color: $cinnabar;
     border-radius: 5px;
     padding: 0.5rem 1rem;
+    font-weight: bolder;
   }
 
   button:hover {

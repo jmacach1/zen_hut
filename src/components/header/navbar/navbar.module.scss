@@ -1,9 +1,11 @@
+@import '../../../theme.scss';
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
-  background-color: lightsteelblue;
+  background-color: $greenBlueCrayola;
 }
 
 .title {
@@ -11,7 +13,7 @@
   min-width: 200px;
   padding: 1rem;
   flex-direction: row;
-  background-color: rgb(210, 231, 230);
+  background-color: $ivory;
   
   .sprout_icon {
     img {
