@@ -3,18 +3,22 @@ import styles from "./quantityPicker.module.scss";
 
 class QuantityPicker extends Component {
   state = {
-    quantity: 1,
+    quantity: this.props.minimum,
   }
 
   increase = () => {
     const current = this.state.quantity;
-    this.setState({ quantity: current + 1 });
+    const final = current + 1;
+    this.setState({ quantity: final });
+    this.props.onValueChange(final);
   }
 
   decrease = () => {
     const current = this.state.quantity;
-    const final = current > 0 ? current - 1 : 0;
+    const final = current - 1;
+    if (final < this.props.minimum) return;
     this.setState({ quantity: final });
+    this.props.onValueChange(final);
   }
 
   render() {

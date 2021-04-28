@@ -19,7 +19,7 @@ class Catalog extends Component {
   render() {
     return ( 
       <div className={styles.catalog}>
-        {this.state.catalog.map(product => (<Product product={product} />))};
+        {this.state.catalog.map(product => (<Product key={product.id} product={product} />))};
       </div>
     );
   }
