@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import styles from './burger.module.scss';
 
 class Burger extends Component {
@@ -22,10 +23,10 @@ class Burger extends Component {
         </div>
         <div id={styles.menu_div} className={styles.menu_div}>
           <nav className={styles.nav}>
-            <a href="#" target="">Link1</a>
-            <a href="#" className={styles.active} target="">Link2</a>
-            <a href="#" target="">Link3</a>
-            <a href="#" target="">Link4</a>
+            <Link to="/">Home</Link>
+            <Link to="/about">About</Link>
+            <Link to="/catalog">Catalog</Link>
+            <Link to="/todo">Todo</Link>
           </nav>
         </div>
       </div> 

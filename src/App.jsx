@@ -1,19 +1,25 @@
-import styles from './App.module.scss';
-import Footer from './components/footer/footer';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import NavBar from './components/header/navbar/navbar';
+import Footer from './components/footer/footer';
 import Catalog from './components/catalog/catalog';
 import TodoPage from './components/TodoPage/todoPage';
+import styles from './App.module.scss';
 
 function App() {
   return (
-    <div className={styles.App}>
-      <NavBar/>
-      <main className={styles.main}>
-        <Catalog/>
-        <TodoPage/>
-      </main>
-      <Footer/>
-    </div>
+    <BrowserRouter> 
+      <div className={styles.App}>
+        <NavBar/>
+        <main className={styles.main}>
+          <Switch>
+            <Route path="/" component={Catalog} exact></Route>
+            <Route path="/catalog" component={Catalog} exact></Route>
+            <Route path="/todo" component={TodoPage} exact></Route>
+          </Switch>
+        </main>
+        <Footer/>
+      </div>
+    </BrowserRouter>
   );
 }
 

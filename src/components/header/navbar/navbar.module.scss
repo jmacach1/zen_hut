@@ -8,26 +8,7 @@
   background-color: $greenBlueCrayola;
 }
 
-.title {
-  display: flex;
-  min-width: 200px;
-  padding: 1rem;
-  flex-direction: row;
-  background-color: $ivory;
-  
-  .sprout_icon {
-    img {
-      width: 48px;
-    }
-  }
-  
-  .title_text {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: .5rem;
-  }
-}
+
 
 // @media only screen and (min-width: 600px) {
 

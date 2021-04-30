@@ -12,6 +12,13 @@
   background-color: cornsilk;
 }
 
+.product:hover {
+  transform: scale(1.05);
+  -webkit-box-shadow: 4px 4px 6px 2px #d4bebe; 
+  box-shadow: 4px 4px 6px 2px #d4bebe;
+  transition: 0.2s;
+}
+
 .image {
   img {
     width: 100%;
