@@ -40,6 +40,10 @@ class Product extends Component {
         <div className={styles.picker}>
           <QuantityPicker onValueChange={this.handleQuantityChange} minimum={this.minimum}/>
         </div>
+
+        <div>
+          <button className={styles.checkout_btn}> 🛒 Add</button>
+        </div>
       </div>
     );
   }

@@ -19,7 +19,11 @@
     font-weight: bolder;
   }
 
-  button:hover {
+  button:disabled {
+    background-color: $onyx;
+  }
+
+  button:hover:enabled {
     background-color: rgb(48, 190, 112);
   }
 

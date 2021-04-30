@@ -1,3 +1,5 @@
+@import '../../theme.scss';
+
 .product {
   display: flex;
   flex-direction: column;
@@ -23,4 +25,12 @@
 
 .picker {
   height: 50px
+}
+
+.checkout_btn {
+  padding: 1rem;
+  font-size: 1.5;
+  font-weight: bolder;
+  color: cornsilk;
+  background-color: $greenBlueCrayola;
 }

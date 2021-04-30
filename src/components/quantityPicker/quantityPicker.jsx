@@ -22,11 +22,12 @@ class QuantityPicker extends Component {
   }
 
   render() {
+    const decreaseDisabled = this.state.quantity === this.props.minimum;
     return (
       <div className={styles.quantityPicker}>
         <button onClick={this.increase}>+</button>
         <label>{this.state.quantity}</label>
-        <button onClick={this.decrease}>-</button>
+        <button disabled={decreaseDisabled} onClick={this.decrease}>-</button>
       </div>
     );
   }
