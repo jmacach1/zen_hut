@@ -3,6 +3,7 @@ import NavBar from './components/header/navbar/navbar';
 import Footer from './components/footer/footer';
 import Catalog from './components/catalog/catalog';
 import TodoPage from './components/TodoPage/todoPage';
+import About from './components/about/about';
 import styles from './App.module.scss';
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <main className={styles.main}>
           <Switch>
             <Route path="/" component={Catalog} exact></Route>
+            <Route path="/about" component={About} exact></Route>
             <Route path="/catalog" component={Catalog} exact></Route>
             <Route path="/todo" component={TodoPage} exact></Route>
           </Switch>

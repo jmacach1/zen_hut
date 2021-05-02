@@ -10,19 +10,21 @@ class Catalog extends Component {
     this.state = {  
       catalog: [],
       catagories: [],
-      selected: ""
+      selected: this.ALL
     }
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     const productService = new ProductService;
-    const products = productService.getData();
-    const catagories = new Set(products.map(product => product.category));
+    // const products = productService.getData();
+    
+    const catalog = await productService.getCatalog();
+    
+    const catagories = new Set(catalog.map(product => product.category));
     
     this.setState({
-      catalog: products,
-      catagories : [...catagories, this.ALL],
-      selected: this.ALL 
+      catalog: catalog,
+      catagories : [...catagories, this.ALL]
     });
   }
 

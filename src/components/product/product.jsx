@@ -29,7 +29,7 @@ class Product extends Component {
         <div className={styles.description}>
           <p>Discount :{this.product.discount}</p>
           <p>Stock: {this.product.stock}</p>
-          <p>Minimum: {this.product.minimum} </p>
+          <p>Minimum: {this.minimum} </p>
         </div>
         
         <div className={styles.price}>

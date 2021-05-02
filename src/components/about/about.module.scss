@@ -1,0 +1,38 @@
+@import '../../theme.scss';
+$splash : 'https://www.active.com/Assets/nutrition/fruits-veggies.jpg';
+
+.about_page {
+  display: flexbox;
+  flex-direction: column;
+
+}
+
+.splash {
+  width: 100vw;
+  height: 40vh;
+  margin: 4rem 0;
+  background-image: url($splash);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+
+  &_inner {
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(63, 57, 57, 0.5);
+    transition: all .3s linear;
+
+    h1 {
+      color: white;
+      z-index: 2;
+    }
+    
+  }
+}
+
+
