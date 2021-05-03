@@ -30,13 +30,30 @@
     background-color: #45a049;
   }
 
-  div {
-    border-radius: 5px;
-    padding: 20px;
-  }
 }
 
-.todoDiv {
+.controls {
+  padding: 2rem;
+}
+
+/* todoList */
+
+.todo_div {
   margin: 1rem;
   border: 2px solid darkgreen;
+  border-radius: 5px;
+  position: relative;
+}
+
+.todo_text {
+  padding: 20px;
+}
+
+.todo_remove {
+  display: inline;
+  position: absolute;
+  background-color: darkgrey;
+  border-radius: 50%;
+  top: 0;
+  right: 0;
 }
