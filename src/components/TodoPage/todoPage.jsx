@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import styles from './todoPage.module.scss';
 import { connect } from 'react-redux';
-import { addTodo } from '../../redux/actions' 
+import { todoActions } from '../../redux/actions';
 
 class TodoPage extends Component {
   constructor(props) {
     super(props);
     this.nextKey = 0;
     this.state = {  
-      todoText: '',
-      todoMap: new Map()
+      todoText: ''
     }
   }
 
@@ -25,39 +24,17 @@ class TodoPage extends Component {
     event.preventDefault();
     const todoText = this.state.todoText;
     if (todoText === '') return;
-
-    const modifiedMap = new Map(this.state.todoMap);
-    modifiedMap.set(this.generateKey(), todoText);
-    this.setState({
-      todoText: '',
-      todoMap: modifiedMap
-    });
-
-
+   
+    this.props.addTodo(this.state.todoText);
+    this.setState({ todoText:'' })
   }
 
-  removeTodo = (key) => {
-    const modifiedMap = new Map(this.state.todoMap);
-    modifiedMap.delete(key);
-    this.setState({
-      todoMap: modifiedMap
-    });
-    console.log(modifiedMap);
+  removeTodoByText = (todoText) => {
+    this.props.removeTodo(todoText);
   }
 
   render() { 
-    const TodoList = [];
-    this.state.todoMap.forEach((todo, key) => TodoList.push((
-      <div key={key} className={styles.todo_div}>
-        <div className={styles.todo_text}>
-          {todo}
-        </div>
-        <div className={styles.todo_remove}>
-          <button onClick={() => this.removeTodo(key)}>❌</button>
-        </div>
-      </div>
-    )));
-
+    console.log( this.props );
     return ( 
       <div className={styles.todoPage}>
         <div className={styles.controls}>
@@ -73,11 +50,28 @@ class TodoPage extends Component {
           </form>
         </div>
         <div className="todo-list">
-          { TodoList.map(todo => todo) }
+          { 
+              this.props.todoItems.map((todo, index) => (
+                <div key={index} className={styles.todo_div}>
+                  <div className={styles.todo_text}>
+                    {todo}
+                  </div>
+                  <div className={styles.todo_remove}>
+                    <button onClick={() => this.removeTodoByText(todo)}>❌</button>
+                  </div>
+                </div>
+              ))
+          }
         </div>
       </div> 
     );
   }
 }
 
-export default TodoPage;
+const mapStateToProps = (state) => {
+  return {
+    todoItems: state.todo
+  }
+}
+
+export default connect(mapStateToProps, todoActions)(TodoPage);

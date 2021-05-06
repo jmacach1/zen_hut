@@ -9,30 +9,41 @@ $splash : 'https://www.active.com/Assets/nutrition/fruits-veggies.jpg';
 
 .splash {
   width: 100vw;
-  height: 40vh;
   margin: 4rem 0;
   background-image: url($splash);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
 
-  &_inner {
+  &_content {
     display: block;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(63, 57, 57, 0.5);
-    transition: all .3s linear;
-
+    padding: 2rem 1rem;
+    background: rgba(63, 57, 57, 0.7);
+    color: white;
+    font-size: 1.5rem;
+    
     h1 {
-      color: white;
-      z-index: 2;
+      font-size: 4rem;
+    }
+
+    p {
+      padding: 1rem;
     }
     
+    button {
+      color: white;
+      font-size: 2rem;
+      background-color: cadetblue;
+      padding: 1rem;
+      border-radius: 10px;
+    }
   }
+
 }
 
 
+.info_text {
+  p {
+    padding: 1rem;
+  }
+}

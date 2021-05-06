@@ -5,10 +5,10 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { createStore } from "redux"; 
 import { Provider } from 'react-redux';
-import todoReducer from './redux/reducers/todoReducer';
+import rootReducer from './redux/reducers/rootReducer';
 
 const store = createStore(
-  todoReducer,
+  rootReducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 

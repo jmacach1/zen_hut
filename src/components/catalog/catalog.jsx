@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import ProductService from '../../services/productService';
 import Product from '../product/product';
 import styles from './catalog.module.scss';
+import { connect } from 'react-redux';
+import { cartActions } from '../../redux/actions';
 
 class Catalog extends Component {
   constructor(props) {
@@ -15,7 +17,7 @@ class Catalog extends Component {
   }
 
   async componentDidMount() {
-    const productService = new ProductService;
+    const productService = new ProductService();
     // const products = productService.getData();
     
     const catalog = await productService.getCatalog();
@@ -33,7 +35,7 @@ class Catalog extends Component {
   }
 
   filterByCatagory() {    
-    if (this.state.selected == this.ALL ) return [...this.state.catalog];
+    if (this.state.selected === this.ALL ) return [...this.state.catalog];
     return this.state.catalog.filter(product => product.category === this.state.selected);
   }
 
@@ -59,5 +61,5 @@ class Catalog extends Component {
   }
 }
  
-export default Catalog;
+export default connect(null, cartActions)(Catalog);
 

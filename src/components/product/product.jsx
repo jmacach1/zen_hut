@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import styles from './product.module.scss';
 import QuantityPicker from './../quantityPicker/quantityPicker';
+import { cartActions } from '../../redux/actions';
 
 class Product extends Component {
   constructor(props) {
@@ -42,10 +44,27 @@ class Product extends Component {
         </div>
 
         <div>
-          <button className={styles.checkout_btn}> 🛒 Add</button>
+          <button className={styles.checkout_btn} onClick={this.addItemToCart}> 🛒 Add</button>
+          <button className={styles.checkout_btn} onClick={this.removeItemFromCart}>
+            Remove 
+          </button>
         </div>
       </div>
     );
+  }
+
+  addItemToCart = () => {
+    // addToCart, removeFromCart, clearCart
+    this.product.quantity = this.state.quantity;
+    this.props.addToCart(this.product);
+  }
+
+  removeItemFromCart = () => {
+    this.props.removeFromCart(this.product);
+  }
+
+  clearCart = () => {
+    this.props.clearCart();
   }
 
   handleQuantityChange = (quantity) => {
@@ -53,4 +72,4 @@ class Product extends Component {
   }
 }
  
-export default Product;
+export default connect(null, cartActions )(Product);
