@@ -1,0 +1,14 @@
+.cartPage {
+  background-color: blanchedalmond;
+  width: 100vw;
+}
+
+.cart_item_list {
+  display: inline-flex;
+  margin: 0 auto;
+  justify-content: left;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 2rem;
+  gap: 1rem;
+}

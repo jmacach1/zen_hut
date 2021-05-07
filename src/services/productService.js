@@ -9,8 +9,6 @@ class ProductService {
   }
 
   async getCatalog() {
-
-
     const res = await axios.get(this.serverUrl + "/products");
     return res.data;
   }

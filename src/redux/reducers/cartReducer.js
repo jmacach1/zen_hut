@@ -6,9 +6,13 @@ const cartReducer = (state = [], action) => {
 
   switch (action.type) {
     case cartActions.CART_ADD:
-      const cart = [...state].filter(item => item.title !== itemPayload.title);
-      cart.push(itemPayload);
-      return cart;
+      const itemInList = findItemInListById(state, itemPayload);
+      if (itemInList === undefined) {
+        return [...state, itemPayload]
+      }
+      itemInList.quantity += itemPayload.quantity;
+      itemInList.total = Number(itemInList.total) + Number(itemPayload.total);
+      return [...state]
     
     case cartActions.CART_REMOVE:
       return [...state].filter(item => item.title !== itemPayload.title);
@@ -19,6 +23,13 @@ const cartReducer = (state = [], action) => {
     default:
       return state;
   }
+}
+
+function findItemInListById(list, item){
+  for (let i of list) {
+    if (i.id === item.id) return i;
+  }
+  return undefined;
 }
 
 

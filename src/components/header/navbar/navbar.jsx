@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './navbar.module.scss';
 import Burger from './burger/burger'
 import Logo from './logo/logo'
-import ShoppingCart from './ShoppingCart/shoppingCart';
+import ShoppingCartIcon from './shoppingCartIcon/shoppingCartIcon';
 
 function NavBar() {
   return (  
@@ -11,7 +11,7 @@ function NavBar() {
         <Logo/>
       </div>
       <div>
-        <ShoppingCart/>
+        <ShoppingCartIcon/>
       </div>
       <div className={styles.burger_container}>
         <Burger/>

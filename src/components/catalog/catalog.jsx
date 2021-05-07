@@ -18,9 +18,9 @@ class Catalog extends Component {
 
   async componentDidMount() {
     const productService = new ProductService();
-    // const products = productService.getData();
+    const catalog = productService.getData();
     
-    const catalog = await productService.getCatalog();
+    // const catalog = await productService.getCatalog();
     
     const catagories = new Set(catalog.map(product => product.category));
     

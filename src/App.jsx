@@ -4,6 +4,7 @@ import Footer from './components/footer/footer';
 import Catalog from './components/catalog/catalog';
 import TodoPage from './components/TodoPage/todoPage';
 import About from './components/about/about';
+import CartPage from './components/cartPage/cartPage'
 import styles from './App.module.scss';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
             <Route path="/about" component={About} exact></Route>
             <Route path="/catalog" component={Catalog} exact></Route>
             <Route path="/todo" component={TodoPage} exact></Route>
+            <Route path="/cart" component={CartPage} exact></Route>
           </Switch>
         </main>
         <Footer/>
