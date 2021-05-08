@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import styles from './shoppingCartIcon.module.scss';
 
 function ShoppingCartIcon(props) {
-  console.log(props.cart);
   return (
     <div className={styles.ShoppingCartIcon}>
         <h1> 
